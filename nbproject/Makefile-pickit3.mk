@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=newmain.c ff.c mmc_xmega.c composite32-high4.c
+SOURCEFILES_QUOTED_IF_SPACED=newmain.c ff.c mmc_xmega.c composite32-high4.c mylib.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.o ${OBJECTDIR}/ff.o ${OBJECTDIR}/mmc_xmega.o ${OBJECTDIR}/composite32-high4.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/ff.o.d ${OBJECTDIR}/mmc_xmega.o.d ${OBJECTDIR}/composite32-high4.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.o ${OBJECTDIR}/ff.o ${OBJECTDIR}/mmc_xmega.o ${OBJECTDIR}/composite32-high4.o ${OBJECTDIR}/mylib.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/ff.o.d ${OBJECTDIR}/mmc_xmega.o.d ${OBJECTDIR}/composite32-high4.o.d ${OBJECTDIR}/mylib.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/newmain.o ${OBJECTDIR}/ff.o ${OBJECTDIR}/mmc_xmega.o ${OBJECTDIR}/composite32-high4.o
+OBJECTFILES=${OBJECTDIR}/newmain.o ${OBJECTDIR}/ff.o ${OBJECTDIR}/mmc_xmega.o ${OBJECTDIR}/composite32-high4.o ${OBJECTDIR}/mylib.o
 
 # Source Files
-SOURCEFILES=newmain.c ff.c mmc_xmega.c composite32-high4.c
+SOURCEFILES=newmain.c ff.c mmc_xmega.c composite32-high4.c mylib.c
 
 
 CFLAGS=
@@ -118,6 +118,12 @@ ${OBJECTDIR}/composite32-high4.o: composite32-high4.c  nbproject/Makefile-${CND_
 	@${RM} ${OBJECTDIR}/composite32-high4.o 
 	@${FIXDEPS} "${OBJECTDIR}/composite32-high4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/composite32-high4.o.d" -o ${OBJECTDIR}/composite32-high4.o composite32-high4.c     
 	
+${OBJECTDIR}/mylib.o: mylib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mylib.o.d 
+	@${RM} ${OBJECTDIR}/mylib.o 
+	@${FIXDEPS} "${OBJECTDIR}/mylib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/mylib.o.d" -o ${OBJECTDIR}/mylib.o mylib.c     
+	
 else
 ${OBJECTDIR}/newmain.o: newmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -142,6 +148,12 @@ ${OBJECTDIR}/composite32-high4.o: composite32-high4.c  nbproject/Makefile-${CND_
 	@${RM} ${OBJECTDIR}/composite32-high4.o.d 
 	@${RM} ${OBJECTDIR}/composite32-high4.o 
 	@${FIXDEPS} "${OBJECTDIR}/composite32-high4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/composite32-high4.o.d" -o ${OBJECTDIR}/composite32-high4.o composite32-high4.c     
+	
+${OBJECTDIR}/mylib.o: mylib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mylib.o.d 
+	@${RM} ${OBJECTDIR}/mylib.o 
+	@${FIXDEPS} "${OBJECTDIR}/mylib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/mylib.o.d" -o ${OBJECTDIR}/mylib.o mylib.c     
 	
 endif
 

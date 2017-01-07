@@ -3,4 +3,5 @@ newmain.c  \
 videoout.h  \
 ff.h  \
 integer.h  \
- ffconf.h 
+ ffconf.h  \
+mylib.h 
