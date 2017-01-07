@@ -207,7 +207,7 @@ unsigned long randomxor128(void){
 void initball(ball_t *ball,int level,int ballnum){
     int i;
     for(i=0;i<ballnum;i++){
-        ball[i].max_speed = 400+level*100;
+        ball[i].max_speed = 500+level*100;
         ball[i].obj.pos.x = (i*7987645%200+25)*256;
         ball[i].obj.pos.y = (30)*256;
         ball[i].obj.size.x = 16*256;
