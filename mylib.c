@@ -36,6 +36,7 @@ vector_t mul_sc256(const vector_t *i1,int i2){
 
 /*‘¬“x‚ÌŒvŽZ*/
 void update_object(object_t *obj){
+    obj->vero = add2(&obj->vero,&obj->acc);
     obj->pos = add2(&obj->pos,&obj->vero);
 }
 

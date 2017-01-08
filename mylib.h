@@ -21,6 +21,7 @@ extern "C" {
     typedef struct{
         vector_t pos;
         vector_t vero;
+        vector_t acc;
         vector_t size;
     } object_t;
     

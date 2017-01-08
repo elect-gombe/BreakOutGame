@@ -196,42 +196,42 @@ Microchip PIC32 Memory-Usage Report
 kseg0 Program-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-.rodata                 0x9d000000         0x51e4       20964  Read-only const 
-.text                   0x9d0051e4         0x695c       26972  App's exec code 
-.rodata                 0x9d00bb40         0x1000        4096  Read-only const 
-.text                   0x9d00cb40          0xf1c        3868  App's exec code 
-.dinit                  0x9d00da5c          0x610        1552   
-.rodata                 0x9d00e06c          0x558        1368  Read-only const 
-.text                   0x9d00e5c4          0x284         644  App's exec code 
-.text.OSCConfig         0x9d00e848          0x168         360   
-.text.DmaChnStartTxfer  0x9d00e9b0          0x148         328   
-.text.DmaChnOpen        0x9d00eaf8           0xf0         240   
-.text.general_exception 0x9d00ebe8           0xdc         220   
-.text.DmaChnSetTxfer    0x9d00ecc4           0x9c         156   
-.rodata                 0x9d00ed60           0x80         128  Read-only const 
-.text.OpenSPI2          0x9d00ede0           0x60          96   
-.text.INTEnable         0x9d00ee40           0x58          88   
-.text.main_entry        0x9d00ee98           0x4c          76   
-.text._bootstrap_except 0x9d00eee4           0x48          72   
-.text._general_exceptio 0x9d00ef2c           0x48          72   
-.text                   0x9d00ef74           0x44          68  App's exec code 
-.vector_default         0x9d00efb8           0x38          56   
-.text.INTEnableSystemMu 0x9d00eff0           0x34          52   
-.text.DmaChnWriteEventC 0x9d00f024           0x30          48   
-.text.INTClearFlag      0x9d00f054           0x2c          44   
-.text.DmaChnEnable      0x9d00f080           0x28          40   
-.text.DmaChnClrEvFlags  0x9d00f0a8           0x24          36   
-.text.DmaChnGetEvFlags  0x9d00f0cc           0x24          36   
-.text.getcSPI2          0x9d00f0f0           0x20          32   
-.text.INTRestoreInterru 0x9d00f110           0x1c          28   
-.text                   0x9d00f12c           0x18          24  App's exec code 
-.rodata                 0x9d00f144           0x10          16  Read-only const 
-.text.INTDisableInterru 0x9d00f154            0x8           8   
-.text.INTEnableInterrup 0x9d00f15c            0x8           8   
-.text._on_reset         0x9d00f164            0x8           8   
-.text._on_bootstrap     0x9d00f16c            0x8           8   
-.rodata                 0x9d00f174            0x4           4  Read-only const 
-      Total kseg0_program_mem used  :      0xf178       61816  24.0% of 0x3f000
+.rodata                 0x9d000000         0x56e4       22244  Read-only const 
+.text                   0x9d0056e4         0x6a90       27280  App's exec code 
+.rodata                 0x9d00c174         0x1000        4096  Read-only const 
+.text                   0x9d00d174          0xf1c        3868  App's exec code 
+.dinit                  0x9d00e090          0x720        1824   
+.rodata                 0x9d00e7b0          0x558        1368  Read-only const 
+.text                   0x9d00ed08          0x2b0         688  App's exec code 
+.text.OSCConfig         0x9d00efb8          0x168         360   
+.text.DmaChnStartTxfer  0x9d00f120          0x148         328   
+.text.DmaChnOpen        0x9d00f268           0xf0         240   
+.text.general_exception 0x9d00f358           0xdc         220   
+.text.DmaChnSetTxfer    0x9d00f434           0x9c         156   
+.rodata                 0x9d00f4d0           0x80         128  Read-only const 
+.text.OpenSPI2          0x9d00f550           0x60          96   
+.text.INTEnable         0x9d00f5b0           0x58          88   
+.text.main_entry        0x9d00f608           0x4c          76   
+.text._bootstrap_except 0x9d00f654           0x48          72   
+.text._general_exceptio 0x9d00f69c           0x48          72   
+.text                   0x9d00f6e4           0x44          68  App's exec code 
+.vector_default         0x9d00f728           0x38          56   
+.text.INTEnableSystemMu 0x9d00f760           0x34          52   
+.text.DmaChnWriteEventC 0x9d00f794           0x30          48   
+.text.INTClearFlag      0x9d00f7c4           0x2c          44   
+.text.DmaChnEnable      0x9d00f7f0           0x28          40   
+.text.DmaChnClrEvFlags  0x9d00f818           0x24          36   
+.text.DmaChnGetEvFlags  0x9d00f83c           0x24          36   
+.text.getcSPI2          0x9d00f860           0x20          32   
+.text.INTRestoreInterru 0x9d00f880           0x1c          28   
+.text                   0x9d00f89c           0x18          24  App's exec code 
+.rodata                 0x9d00f8b4           0x10          16  Read-only const 
+.text.INTDisableInterru 0x9d00f8c4            0x8           8   
+.text.INTEnableInterrup 0x9d00f8cc            0x8           8   
+.text._on_reset         0x9d00f8d4            0x8           8   
+.text._on_bootstrap     0x9d00f8dc            0x8           8   
+.rodata                 0x9d00f8e4            0x4           4  Read-only const 
+      Total kseg0_program_mem used  :      0xf8e8       63720  24.7% of 0x3f000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -315,7 +315,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x1d4         468  40.1% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0xf55c       62812  23.9% of 0x40490
+         Total Program Memory used  :      0xfccc       64716  24.6% of 0x40490
         --------------------------------------------------------------------------
 
 
@@ -325,19 +325,19 @@ section                    address  length [bytes]      (dec)  Description
 .sdata                  0xa0000000           0x1c          28  Small init data 
 .sbss                   0xa000001c           0x40          64  Small uninit data 
 .bss                    0xa000005c         0x81bc       33212  Uninitialized data 
-.bss                    0xa0008218          0xa1c        2588  Uninitialized data 
-.data                   0xa0008c34          0x578        1400  Initialized data 
-         Total kseg1_data_mem used  :      0x91ac       37292  56.9% of 0x10000
+.bss                    0xa0008218          0xad0        2768  Uninitialized data 
+.data                   0xa0008ce8          0x688        1672  Initialized data 
+         Total kseg1_data_mem used  :      0x9370       37744  57.6% of 0x10000
         --------------------------------------------------------------------------
-            Total Data Memory used  :      0x91ac       37292  56.9% of 0x10000
+            Total Data Memory used  :      0x9370       37744  57.6% of 0x10000
         --------------------------------------------------------------------------
 
 
 Dynamic Data-Memory Reservation
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-heap                    0xa00091b0           0x10          16  Reserved for heap 
-stack                   0xa00091d8         0x6e18       28184  Reserved for stack 
+heap                    0xa0009378           0x10          16  Reserved for heap 
+stack                   0xa00093a0         0x6c58       27736  Reserved for stack 
 
         --------------------------------------------------------------------------
 
@@ -1564,214 +1564,214 @@ END GROUP
                 0x00000340       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
 .debug_pubnames
-                0x00000000      0xa88
+                0x00000000      0xaea
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000      0x18f build/pickit3/production/newmain.o
+                0x00000000      0x1f1 build/pickit3/production/newmain.o
  .debug_pubnames
-                0x0000018f       0xef build/pickit3/production/ff.o
+                0x000001f1       0xef build/pickit3/production/ff.o
  .debug_pubnames
-                0x0000027e       0x9e build/pickit3/production/mmc_xmega.o
+                0x000002e0       0x9e build/pickit3/production/mmc_xmega.o
  .debug_pubnames
-                0x0000031c      0x31f build/pickit3/production/composite32-high4.o
+                0x0000037e      0x31f build/pickit3/production/composite32-high4.o
  .debug_pubnames
-                0x0000063b       0x8e build/pickit3/production/mylib.o
+                0x0000069d       0x8e build/pickit3/production/mylib.o
  .debug_pubnames
-                0x000006c9       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+                0x0000072b       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
  .debug_pubnames
-                0x000006e9       0x2b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+                0x0000074b       0x2b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
  .debug_pubnames
-                0x00000714       0x2b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+                0x00000776       0x2b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
  .debug_pubnames
-                0x0000073f       0x36 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+                0x000007a1       0x36 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
  .debug_pubnames
-                0x00000775       0x1f /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+                0x000007d7       0x1f /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
  .debug_pubnames
-                0x00000794       0x1f /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+                0x000007f6       0x1f /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
  .debug_pubnames
-                0x000007b3       0x27 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+                0x00000815       0x27 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
  .debug_pubnames
-                0x000007da       0x21 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+                0x0000083c       0x21 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
  .debug_pubnames
-                0x000007fb       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+                0x0000085d       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
  .debug_pubnames
-                0x0000081e       0x27 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+                0x00000880       0x27 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
  .debug_pubnames
-                0x00000845       0x33 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+                0x000008a7       0x33 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
  .debug_pubnames
-                0x00000878       0x25 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+                0x000008da       0x25 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
  .debug_pubnames
-                0x0000089d       0x27 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+                0x000008ff       0x27 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
  .debug_pubnames
-                0x000008c4       0x2a /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+                0x00000926       0x2a /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
  .debug_pubnames
-                0x000008ee       0xca /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+                0x00000950       0xca /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
  .debug_pubnames
-                0x000009b8       0x33 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+                0x00000a1a       0x33 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
  .debug_pubnames
-                0x000009eb       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+                0x00000a4d       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
  .debug_pubnames
-                0x00000a0b       0x24 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+                0x00000a6d       0x24 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
  .debug_pubnames
-                0x00000a2f       0x31 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+                0x00000a91       0x31 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
  .debug_pubnames
-                0x00000a60       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+                0x00000ac2       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_info     0x00000000     0x9495
+.debug_info     0x00000000     0x95ed
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000     0x22dd build/pickit3/production/newmain.o
- .debug_info    0x000022dd     0x1810 build/pickit3/production/ff.o
- .debug_info    0x00003aed     0x1c5f build/pickit3/production/mmc_xmega.o
- .debug_info    0x0000574c     0x2966 build/pickit3/production/composite32-high4.o
- .debug_info    0x000080b2      0x493 build/pickit3/production/mylib.o
- .debug_info    0x00008545       0xbc /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
- .debug_info    0x00008601       0xb2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
- .debug_info    0x000086b3       0xb2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
- .debug_info    0x00008765       0xb8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
- .debug_info    0x0000881d       0xa4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
- .debug_info    0x000088c1       0xa4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
- .debug_info    0x00008965        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
- .debug_info    0x00008965       0xac /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
- .debug_info    0x00008a11       0xb1 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
- .debug_info    0x00008ac2       0xa2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
- .debug_info    0x00008b64       0xac /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
- .debug_info    0x00008c10       0xc5 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
- .debug_info    0x00008cd5       0xb8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
- .debug_info    0x00008d8d       0xc4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
- .debug_info    0x00008e51        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
- .debug_info    0x00008e51       0xb0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
- .debug_info    0x00008f01      0x192 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
- .debug_info    0x00009093       0xde /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x00009171       0xb8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_info    0x00009229       0xc0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_info    0x000092e9       0xda /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_info    0x000093c3       0xd2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_info    0x00000000     0x2427 build/pickit3/production/newmain.o
+ .debug_info    0x00002427     0x1810 build/pickit3/production/ff.o
+ .debug_info    0x00003c37     0x1c5f build/pickit3/production/mmc_xmega.o
+ .debug_info    0x00005896     0x2966 build/pickit3/production/composite32-high4.o
+ .debug_info    0x000081fc      0x4a1 build/pickit3/production/mylib.o
+ .debug_info    0x0000869d       0xbc /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+ .debug_info    0x00008759       0xb2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+ .debug_info    0x0000880b       0xb2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+ .debug_info    0x000088bd       0xb8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+ .debug_info    0x00008975       0xa4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+ .debug_info    0x00008a19       0xa4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+ .debug_info    0x00008abd        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
+ .debug_info    0x00008abd       0xac /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+ .debug_info    0x00008b69       0xb1 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+ .debug_info    0x00008c1a       0xa2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+ .debug_info    0x00008cbc       0xac /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+ .debug_info    0x00008d68       0xc5 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+ .debug_info    0x00008e2d       0xb8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+ .debug_info    0x00008ee5       0xc4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+ .debug_info    0x00008fa9        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
+ .debug_info    0x00008fa9       0xb0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+ .debug_info    0x00009059      0x192 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+ .debug_info    0x000091eb       0xde /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x000092c9       0xb8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_info    0x00009381       0xc0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x00009441       0xda /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_info    0x0000951b       0xd2 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_abbrev   0x00000000      0xe6e
+.debug_abbrev   0x00000000      0xe55
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x350 build/pickit3/production/newmain.o
- .debug_abbrev  0x00000350      0x1dc build/pickit3/production/ff.o
- .debug_abbrev  0x0000052c      0x30f build/pickit3/production/mmc_xmega.o
- .debug_abbrev  0x0000083b      0x24a build/pickit3/production/composite32-high4.o
- .debug_abbrev  0x00000a85       0xef build/pickit3/production/mylib.o
- .debug_abbrev  0x00000b74       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
- .debug_abbrev  0x00000ba6       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
- .debug_abbrev  0x00000bc9       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
- .debug_abbrev  0x00000bec       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
- .debug_abbrev  0x00000c0f       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
- .debug_abbrev  0x00000c32       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
- .debug_abbrev  0x00000c55        0x1 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
- .debug_abbrev  0x00000c56       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
- .debug_abbrev  0x00000c79       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
- .debug_abbrev  0x00000cab       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
- .debug_abbrev  0x00000cce       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
- .debug_abbrev  0x00000cf1       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
- .debug_abbrev  0x00000d14       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
- .debug_abbrev  0x00000d46       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
- .debug_abbrev  0x00000d78        0x1 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
- .debug_abbrev  0x00000d79       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
- .debug_abbrev  0x00000d9c       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
- .debug_abbrev  0x00000dbf       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x00000de2       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_abbrev  0x00000e05       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x00000e28       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_abbrev  0x00000e4b       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x00000000      0x337 build/pickit3/production/newmain.o
+ .debug_abbrev  0x00000337      0x1dc build/pickit3/production/ff.o
+ .debug_abbrev  0x00000513      0x30f build/pickit3/production/mmc_xmega.o
+ .debug_abbrev  0x00000822      0x24a build/pickit3/production/composite32-high4.o
+ .debug_abbrev  0x00000a6c       0xef build/pickit3/production/mylib.o
+ .debug_abbrev  0x00000b5b       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+ .debug_abbrev  0x00000b8d       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+ .debug_abbrev  0x00000bb0       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+ .debug_abbrev  0x00000bd3       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+ .debug_abbrev  0x00000bf6       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+ .debug_abbrev  0x00000c19       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+ .debug_abbrev  0x00000c3c        0x1 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
+ .debug_abbrev  0x00000c3d       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+ .debug_abbrev  0x00000c60       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+ .debug_abbrev  0x00000c92       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+ .debug_abbrev  0x00000cb5       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+ .debug_abbrev  0x00000cd8       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+ .debug_abbrev  0x00000cfb       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+ .debug_abbrev  0x00000d2d       0x32 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+ .debug_abbrev  0x00000d5f        0x1 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
+ .debug_abbrev  0x00000d60       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+ .debug_abbrev  0x00000d83       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+ .debug_abbrev  0x00000da6       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00000dc9       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x00000dec       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x00000e0f       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_abbrev  0x00000e32       0x23 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_line     0x00000000     0x1fa7
+.debug_line     0x00000000     0x1fca
  *(.debug_line)
- .debug_line    0x00000000      0x387 build/pickit3/production/newmain.o
- .debug_line    0x00000387      0x4c4 build/pickit3/production/ff.o
- .debug_line    0x0000084b      0x321 build/pickit3/production/mmc_xmega.o
- .debug_line    0x00000b6c      0x957 build/pickit3/production/composite32-high4.o
- .debug_line    0x000014c3       0xe5 build/pickit3/production/mylib.o
- .debug_line    0x000015a8       0xab /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
- .debug_line    0x00001653       0x73 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
- .debug_line    0x000016c6       0x73 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
- .debug_line    0x00001739       0x6e /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
- .debug_line    0x000017a7       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
- .debug_line    0x00001818       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
- .debug_line    0x00001889        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
- .debug_line    0x00001889       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
- .debug_line    0x000018fa       0x7b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
- .debug_line    0x00001975       0x6b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
- .debug_line    0x000019e0       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
- .debug_line    0x00001a51       0x7e /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
- .debug_line    0x00001acf       0x80 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
- .debug_line    0x00001b4f       0xb4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
- .debug_line    0x00001c03        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
- .debug_line    0x00001c03       0x72 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
- .debug_line    0x00001c75       0x64 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
- .debug_line    0x00001cd9       0x97 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00001d70       0x84 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_line    0x00001df4       0x88 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_line    0x00001e7c       0x95 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_line    0x00001f11       0x96 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_line    0x00000000      0x3a5 build/pickit3/production/newmain.o
+ .debug_line    0x000003a5      0x4c4 build/pickit3/production/ff.o
+ .debug_line    0x00000869      0x321 build/pickit3/production/mmc_xmega.o
+ .debug_line    0x00000b8a      0x957 build/pickit3/production/composite32-high4.o
+ .debug_line    0x000014e1       0xea build/pickit3/production/mylib.o
+ .debug_line    0x000015cb       0xab /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+ .debug_line    0x00001676       0x73 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+ .debug_line    0x000016e9       0x73 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+ .debug_line    0x0000175c       0x6e /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+ .debug_line    0x000017ca       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+ .debug_line    0x0000183b       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+ .debug_line    0x000018ac        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
+ .debug_line    0x000018ac       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+ .debug_line    0x0000191d       0x7b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+ .debug_line    0x00001998       0x6b /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+ .debug_line    0x00001a03       0x71 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+ .debug_line    0x00001a74       0x7e /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+ .debug_line    0x00001af2       0x80 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+ .debug_line    0x00001b72       0xb4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+ .debug_line    0x00001c26        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
+ .debug_line    0x00001c26       0x72 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+ .debug_line    0x00001c98       0x64 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+ .debug_line    0x00001cfc       0x97 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x00001d93       0x84 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_line    0x00001e17       0x88 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x00001e9f       0x95 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_line    0x00001f34       0x96 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_frame    0x00000000      0xe50
+.debug_frame    0x00000000      0xe60
  *(.debug_frame)
- .debug_frame   0x00000000      0x18c build/pickit3/production/newmain.o
- .debug_frame   0x0000018c      0x36c build/pickit3/production/ff.o
- .debug_frame   0x000004f8      0x158 build/pickit3/production/mmc_xmega.o
- .debug_frame   0x00000650      0x3f4 build/pickit3/production/composite32-high4.o
- .debug_frame   0x00000a44       0xd0 build/pickit3/production/mylib.o
- .debug_frame   0x00000b14       0x30 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
- .debug_frame   0x00000b44       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
- .debug_frame   0x00000b64       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
- .debug_frame   0x00000b84       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
- .debug_frame   0x00000bac       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
- .debug_frame   0x00000bcc       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
- .debug_frame   0x00000bec       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
- .debug_frame   0x00000c0c       0x34 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
- .debug_frame   0x00000c40       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
- .debug_frame   0x00000c60       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
- .debug_frame   0x00000c80       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
- .debug_frame   0x00000ca0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
- .debug_frame   0x00000cc0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
- .debug_frame   0x00000ce0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
- .debug_frame   0x00000d00       0xa0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
- .debug_frame   0x00000da0       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_frame   0x00000dc8       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_frame   0x00000de8       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_frame   0x00000e08       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_frame   0x00000e30       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x00000000      0x198 build/pickit3/production/newmain.o
+ .debug_frame   0x00000198      0x36c build/pickit3/production/ff.o
+ .debug_frame   0x00000504      0x158 build/pickit3/production/mmc_xmega.o
+ .debug_frame   0x0000065c      0x3f4 build/pickit3/production/composite32-high4.o
+ .debug_frame   0x00000a50       0xd4 build/pickit3/production/mylib.o
+ .debug_frame   0x00000b24       0x30 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+ .debug_frame   0x00000b54       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+ .debug_frame   0x00000b74       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+ .debug_frame   0x00000b94       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+ .debug_frame   0x00000bbc       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+ .debug_frame   0x00000bdc       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+ .debug_frame   0x00000bfc       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+ .debug_frame   0x00000c1c       0x34 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+ .debug_frame   0x00000c50       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+ .debug_frame   0x00000c70       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+ .debug_frame   0x00000c90       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+ .debug_frame   0x00000cb0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+ .debug_frame   0x00000cd0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+ .debug_frame   0x00000cf0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+ .debug_frame   0x00000d10       0xa0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+ .debug_frame   0x00000db0       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x00000dd8       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_frame   0x00000df8       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x00000e18       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_frame   0x00000e40       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_str      0x00000000      0x400
+.debug_str      0x00000000      0x44a
  *(.debug_str)
- .debug_str     0x00000000      0x13f build/pickit3/production/newmain.o
- .debug_str     0x0000013f        0xa build/pickit3/production/ff.o
- .debug_str     0x00000149      0x11f build/pickit3/production/mmc_xmega.o
- .debug_str     0x00000268      0x18f build/pickit3/production/composite32-high4.o
- .debug_str     0x000003f7        0x9 build/pickit3/production/mylib.o
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_str     0x00000400        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_str     0x00000000      0x189 build/pickit3/production/newmain.o
+ .debug_str     0x00000189        0xa build/pickit3/production/ff.o
+ .debug_str     0x00000193      0x11f build/pickit3/production/mmc_xmega.o
+ .debug_str     0x000002b2      0x18f build/pickit3/production/composite32-high4.o
+ .debug_str     0x00000441        0x9 build/pickit3/production/mylib.o
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_str     0x0000044a        0x0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_loc      0x00000000     0x3515
+.debug_loc      0x00000000     0x352b
  *(.debug_loc)
- .debug_loc     0x00000000      0x601 build/pickit3/production/newmain.o
- .debug_loc     0x00000601     0x1935 build/pickit3/production/ff.o
- .debug_loc     0x00001f36      0x3fd build/pickit3/production/mmc_xmega.o
- .debug_loc     0x00002333     0x1041 build/pickit3/production/composite32-high4.o
- .debug_loc     0x00003374      0x1a1 build/pickit3/production/mylib.o
+ .debug_loc     0x00000000      0x617 build/pickit3/production/newmain.o
+ .debug_loc     0x00000617     0x1935 build/pickit3/production/ff.o
+ .debug_loc     0x00001f4c      0x3fd build/pickit3/production/mmc_xmega.o
+ .debug_loc     0x00002349     0x1041 build/pickit3/production/composite32-high4.o
+ .debug_loc     0x0000338a      0x1a1 build/pickit3/production/mylib.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1882,20 +1882,21 @@ LOAD data_init
 .reginfo        0x00000000       0x18
  .reginfo       0x00000000       0x18 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX270F256B/crt0_mips32r2.o
 
-.stack          0xa00091d8      0x400
- .stack         0xa00091d8      0x400 stack
+.stack          0xa00093a0      0x400
+ .stack         0xa00093a0      0x400 stack
 
-.bss            0xa0008218      0xa1c
- .bss           0xa0008218      0xa1c build/pickit3/production/newmain.o
+.bss            0xa0008218      0xad0
+ .bss           0xa0008218      0xad0 build/pickit3/production/newmain.o
                 0xa0008218                sounddata
                 0xa0008a18                balls
 
-.data           0xa0008c34      0x578
- .data          0xa0008c34      0x378 build/pickit3/production/newmain.o
-                0xa0008c34                blocks
-                0xa0008f98                cur_sound
- .data          0xa0008fac      0x200 build/pickit3/production/mmc_xmega.o
-                0xa0008fac                dumydata
+.data           0xa0008ce8      0x688
+ .data          0xa0008ce8      0x488 build/pickit3/production/newmain.o
+                0xa0008ce8                ballimg
+                0xa0008d00                blocks
+                0xa000915c                cur_sound
+ .data          0xa0009170      0x200 build/pickit3/production/mmc_xmega.o
+                0xa0009170                dumydata
 
 ._debug_exception
                 0xbfc00480       0x2c
@@ -1903,278 +1904,283 @@ LOAD data_init
                 0xbfc00480       0x2c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/debug-exception-return.o
                 0xbfc00480                __DbgExecReturn
 
-.rodata         0x9d000000     0x51e4
- .rodata        0x9d000000     0x51e4 build/pickit3/production/newmain.o
-                0x9d000098                ballimg
-                0x9d000198                s_break
-                0x9d0023fc                s_hitblk
-                0x9d003640                s_hitpad
-                0x9d0051e1                stop
+.rodata         0x9d000000     0x56e4
+ .rodata        0x9d000000     0x56e4 build/pickit3/production/newmain.o
+                0x9d000098                ballimgred
+                0x9d000198                ballimgpink
+                0x9d000298                ballimggreen
+                0x9d000398                ballimgcyan
+                0x9d000498                ballimgyellow
+                0x9d000598                ballimgblue
+                0x9d000698                s_break
+                0x9d0028fc                s_hitblk
+                0x9d003b40                s_hitpad
+                0x9d0056e1                stop
 
-.text           0x9d0051e4     0x695c
- .text          0x9d0051e4     0x3724 build/pickit3/production/composite32-high4.o
-                0x9d0051e4                vramscroll
-                0x9d0052c8                vramscrolldown
-                0x9d0053a0                setcursor
-                0x9d0053e4                setcursorcolor
-                0x9d0053ec                printchar
-                0x9d0054dc                printstr
-                0x9d005518                printnum
-                0x9d0055b0                printnum2
-                0x9d0056bc                startPCG
-                0x9d005738                stopPCG
-                0x9d005764                T2Handler
-                0x9d005a4c                OC3Handler
-                0x9d005b70                OC1Handler
-                0x9d005d68                OC2Handler
-                0x9d006cc0                clearscreen
-                0x9d006cec                cls
-                0x9d006d08                g_clearscreen
-                0x9d006d28                set_palette
-                0x9d006eb0                set_bgcolor
-                0x9d007024                g_set_palette
-                0x9d007388                start_composite
-                0x9d0073e8                stop_composite
-                0x9d007414                init_composite
-                0x9d0075ac                set_width
-                0x9d00762c                set_graphmode
-                0x9d007690                init_graphic
-                0x9d007738                g_pset
-                0x9d0077c4                g_putbmpmn
-                0x9d007aa4                g_clrbmpmn
-                0x9d007ca0                g_gline
-                0x9d007df4                g_hline
-                0x9d007f30                g_circle
-                0x9d008088                g_boxfill
-                0x9d008158                g_circlefill
-                0x9d008264                g_putfont
-                0x9d008648                g_printstr
-                0x9d0086c8                g_printnum
-                0x9d0087a4                g_printnum2
-                0x9d0088ac                g_color
- .text          0x9d008908     0x2010 build/pickit3/production/ff.o
-                0x9d009224                clust2sect
-                0x9d009254                get_fat
-                0x9d009b4c                f_mount
-                0x9d009bfc                f_open
-                0x9d009d00                f_read
-                0x9d009f3c                f_close
-                0x9d009f68                f_chdir
-                0x9d00a010                f_getcwd
-                0x9d00a23c                f_lseek
-                0x9d00a42c                f_opendir
-                0x9d00a4ec                f_closedir
-                0x9d00a518                f_readdir
-                0x9d00a5cc                f_findnext
-                0x9d00a650                f_findfirst
-                0x9d00a69c                f_stat
-                0x9d00a724                f_getlabel
-                0x9d00a870                f_gets
- .text          0x9d00a918     0x1228 build/pickit3/production/newmain.o
-                0x9d00a918                myg_pset
-                0x9d00a96c                myg_hline
-                0x9d00aa64                myg_boxfill
-                0x9d00aae8                drawBlock
-                0x9d00ab64                eraseBlock
-                0x9d00ab98                ballWall
-                0x9d00abd0                randomxor128
-                0x9d00ac10                initball
-                0x9d00ad28                initblock
-                0x9d00ae28                geneball
-                0x9d00af18                printscore
-                0x9d00af70                sound
-                0x9d00afe0                soundmixing
-                0x9d00b050                main
-                0x9d00ba2c                audiotask
-                0x9d00bb24                musicTask
+.text           0x9d0056e4     0x6a90
+ .text          0x9d0056e4     0x3724 build/pickit3/production/composite32-high4.o
+                0x9d0056e4                vramscroll
+                0x9d0057c8                vramscrolldown
+                0x9d0058a0                setcursor
+                0x9d0058e4                setcursorcolor
+                0x9d0058ec                printchar
+                0x9d0059dc                printstr
+                0x9d005a18                printnum
+                0x9d005ab0                printnum2
+                0x9d005bbc                startPCG
+                0x9d005c38                stopPCG
+                0x9d005c64                T2Handler
+                0x9d005f4c                OC3Handler
+                0x9d006070                OC1Handler
+                0x9d006268                OC2Handler
+                0x9d0071c0                clearscreen
+                0x9d0071ec                cls
+                0x9d007208                g_clearscreen
+                0x9d007228                set_palette
+                0x9d0073b0                set_bgcolor
+                0x9d007524                g_set_palette
+                0x9d007888                start_composite
+                0x9d0078e8                stop_composite
+                0x9d007914                init_composite
+                0x9d007aac                set_width
+                0x9d007b2c                set_graphmode
+                0x9d007b90                init_graphic
+                0x9d007c38                g_pset
+                0x9d007cc4                g_putbmpmn
+                0x9d007fa4                g_clrbmpmn
+                0x9d0081a0                g_gline
+                0x9d0082f4                g_hline
+                0x9d008430                g_circle
+                0x9d008588                g_boxfill
+                0x9d008658                g_circlefill
+                0x9d008764                g_putfont
+                0x9d008b48                g_printstr
+                0x9d008bc8                g_printnum
+                0x9d008ca4                g_printnum2
+                0x9d008dac                g_color
+ .text          0x9d008e08     0x2010 build/pickit3/production/ff.o
+                0x9d009724                clust2sect
+                0x9d009754                get_fat
+                0x9d00a04c                f_mount
+                0x9d00a0fc                f_open
+                0x9d00a200                f_read
+                0x9d00a43c                f_close
+                0x9d00a468                f_chdir
+                0x9d00a510                f_getcwd
+                0x9d00a73c                f_lseek
+                0x9d00a92c                f_opendir
+                0x9d00a9ec                f_closedir
+                0x9d00aa18                f_readdir
+                0x9d00aacc                f_findnext
+                0x9d00ab50                f_findfirst
+                0x9d00ab9c                f_stat
+                0x9d00ac24                f_getlabel
+                0x9d00ad70                f_gets
+ .text          0x9d00ae18     0x135c build/pickit3/production/newmain.o
+                0x9d00ae18                myg_pset
+                0x9d00ae6c                myg_hline
+                0x9d00af64                myg_boxfill
+                0x9d00afe8                drawBlock
+                0x9d00b064                eraseBlock
+                0x9d00b098                ballWall
+                0x9d00b0d0                randomxor128
+                0x9d00b110                initball
+                0x9d00b228                initblock
+                0x9d00b328                geneball
+                0x9d00b500                printscore
+                0x9d00b558                sound
+                0x9d00b5c8                soundmixing
+                0x9d00b638                main
+                0x9d00c060                audiotask
+                0x9d00c158                musicTask
 
-.rodata         0x9d00bb40     0x1000
- .rodata        0x9d00bb40     0x1000 build/pickit3/production/composite32-high4.o
-                0x9d00bb40                FontData
-                0x9d00c340                FontData2
+.rodata         0x9d00c174     0x1000
+ .rodata        0x9d00c174     0x1000 build/pickit3/production/composite32-high4.o
+                0x9d00c174                FontData
+                0x9d00c974                FontData2
 
-.text           0x9d00cb40      0xf1c
- .text          0x9d00cb40      0xf1c build/pickit3/production/mmc_xmega.o
-                0x9d00cb40                rcvr_spi
-                0x9d00d024                rcvr_spi_m
-                0x9d00d06c                disk_initialize
-                0x9d00d318                disk_status
-                0x9d00d334                disk_read
-                0x9d00d420                disk_write
-                0x9d00d548                disk_ioctl
-                0x9d00da18                disk_timerproc
+.text           0x9d00d174      0xf1c
+ .text          0x9d00d174      0xf1c build/pickit3/production/mmc_xmega.o
+                0x9d00d174                rcvr_spi
+                0x9d00d658                rcvr_spi_m
+                0x9d00d6a0                disk_initialize
+                0x9d00d94c                disk_status
+                0x9d00d968                disk_read
+                0x9d00da54                disk_write
+                0x9d00db7c                disk_ioctl
+                0x9d00e04c                disk_timerproc
 
-.dinit          0x9d00da5c      0x610
- .dinit         0x9d00da5c      0x610 data_init
+.dinit          0x9d00e090      0x720
+ .dinit         0x9d00e090      0x720 data_init
 
-.rodata         0x9d00e06c      0x558
- .rodata        0x9d00e06c      0x558 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
-                0x9d00e06c                __IntSrcTbl
-                0x9d00e3b4                __IntVectorTbl
+.rodata         0x9d00e7b0      0x558
+ .rodata        0x9d00e7b0      0x558 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+                0x9d00e7b0                __IntSrcTbl
+                0x9d00eaf8                __IntVectorTbl
 
-.text           0x9d00e5c4      0x284
- .text          0x9d00e5c4      0x284 build/pickit3/production/mylib.o
-                0x9d00e5c4                add2
-                0x9d00e5ec                sub2
-                0x9d00e614                mul_sc256
-                0x9d00e63c                update_object
-                0x9d00e67c                drawImage
-                0x9d00e6cc                eraseImage
-                0x9d00e714                judgeArea
-                0x9d00e734                isCollision
-                0x9d00e798                refrection
+.text           0x9d00ed08      0x2b0
+ .text          0x9d00ed08      0x2b0 build/pickit3/production/mylib.o
+                0x9d00ed08                add2
+                0x9d00ed30                sub2
+                0x9d00ed58                mul_sc256
+                0x9d00ed80                update_object
+                0x9d00edec                drawImage
+                0x9d00ee3c                eraseImage
+                0x9d00ee84                judgeArea
+                0x9d00eea4                isCollision
+                0x9d00ef08                refrection
 
 .text.OSCConfig
-                0x9d00e848      0x168
+                0x9d00efb8      0x168
  .text.OSCConfig
-                0x9d00e848      0x168 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
-                0x9d00e848                OSCConfig
+                0x9d00efb8      0x168 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(osc_config_lib.o)
+                0x9d00efb8                OSCConfig
 
 .text.DmaChnStartTxfer
-                0x9d00e9b0      0x148
+                0x9d00f120      0x148
  .text.DmaChnStartTxfer
-                0x9d00e9b0      0x148 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
-                0x9d00e9b0                DmaChnStartTxfer
+                0x9d00f120      0x148 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_start_txfer_lib.o)
+                0x9d00f120                DmaChnStartTxfer
 
 .text.DmaChnOpen
-                0x9d00eaf8       0xf0
+                0x9d00f268       0xf0
  .text.DmaChnOpen
-                0x9d00eaf8       0xf0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
-                0x9d00eaf8                DmaChnOpen
+                0x9d00f268       0xf0 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_open_lib.o)
+                0x9d00f268                DmaChnOpen
 
 .text.general_exception
-                0x9d00ebe8       0xdc
+                0x9d00f358       0xdc
  .text.general_exception
-                0x9d00ebe8       0xdc /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(general-exception.o)
-                0x9d00ebe8                _general_exception_context
+                0x9d00f358       0xdc /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(general-exception.o)
+                0x9d00f358                _general_exception_context
 
 .text.DmaChnSetTxfer
-                0x9d00ecc4       0x9c
+                0x9d00f434       0x9c
  .text.DmaChnSetTxfer
-                0x9d00ecc4       0x9c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
-                0x9d00ecc4                DmaChnSetTxfer
+                0x9d00f434       0x9c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_set_txfer_lib.o)
+                0x9d00f434                DmaChnSetTxfer
 
-.rodata         0x9d00ed60       0x80
- .rodata        0x9d00ed60       0x80 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
-                0x9d00ed60                _SpiBrgConvTbl
+.rodata         0x9d00f4d0       0x80
+ .rodata        0x9d00f4d0       0x80 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_brg_tbl_lib_legacy.o)
+                0x9d00f4d0                _SpiBrgConvTbl
 
-.text.OpenSPI2  0x9d00ede0       0x60
+.text.OpenSPI2  0x9d00f550       0x60
  .text.OpenSPI2
-                0x9d00ede0       0x60 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
-                0x9d00ede0                OpenSPI2
+                0x9d00f550       0x60 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_open_spi2_lib_legacy.o)
+                0x9d00f550                OpenSPI2
 
 .text.INTEnable
-                0x9d00ee40       0x58
+                0x9d00f5b0       0x58
  .text.INTEnable
-                0x9d00ee40       0x58 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
-                0x9d00ee40                INTEnable
+                0x9d00f5b0       0x58 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+                0x9d00f5b0                INTEnable
 
 .text.main_entry
-                0x9d00ee98       0x4c
+                0x9d00f608       0x4c
  .text.main_entry
-                0x9d00ee98       0x4c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX270F256B/crt0_mips32r2.o
-                0x9d00eec4                __crt0_exit
+                0x9d00f608       0x4c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX270F256B/crt0_mips32r2.o
+                0x9d00f634                __crt0_exit
 
 .text._bootstrap_exception_handler
-                0x9d00eee4       0x48
+                0x9d00f654       0x48
  .text._bootstrap_exception_handler
-                0x9d00eee4       0x48 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d00eee4                _bootstrap_exception_handler
+                0x9d00f654       0x48 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d00f654                _bootstrap_exception_handler
 
 .text._general_exception_handler
-                0x9d00ef2c       0x48
+                0x9d00f69c       0x48
  .text._general_exception_handler
-                0x9d00ef2c       0x48 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
-                0x9d00ef2c                _general_exception_handler
+                0x9d00f69c       0x48 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+                0x9d00f69c                _general_exception_handler
 
-.text           0x9d00ef74       0x44
- .text          0x9d00ef74       0x44 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/pic32_software_reset.o
-                0x9d00ef74                __pic32_software_reset
+.text           0x9d00f6e4       0x44
+ .text          0x9d00f6e4       0x44 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/pic32_software_reset.o
+                0x9d00f6e4                __pic32_software_reset
 
 .vector_default
-                0x9d00efb8       0x38
+                0x9d00f728       0x38
  .vector_default
-                0x9d00efb8       0x38 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
-                0x9d00efb8                _DefaultInterrupt
+                0x9d00f728       0x38 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+                0x9d00f728                _DefaultInterrupt
 
 .text.INTEnableSystemMultiVectoredInt
-                0x9d00eff0       0x34
+                0x9d00f760       0x34
  .text.INTEnableSystemMultiVectoredInt
-                0x9d00eff0       0x34 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
-                0x9d00eff0                INTEnableSystemMultiVectoredInt
+                0x9d00f760       0x34 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_mv_int_lib.o)
+                0x9d00f760                INTEnableSystemMultiVectoredInt
 
 .text.DmaChnWriteEventControlFlags
-                0x9d00f024       0x30
+                0x9d00f794       0x30
  .text.DmaChnWriteEventControlFlags
-                0x9d00f024       0x30 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
-                0x9d00f024                DmaChnWriteEventControlFlags
+                0x9d00f794       0x30 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_write_event_control_flags_lib.o)
+                0x9d00f794                DmaChnWriteEventControlFlags
 
 .text.INTClearFlag
-                0x9d00f054       0x2c
+                0x9d00f7c4       0x2c
  .text.INTClearFlag
-                0x9d00f054       0x2c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
-                0x9d00f054                INTClearFlag
+                0x9d00f7c4       0x2c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_tbl_lib.o)
+                0x9d00f7c4                INTClearFlag
 
 .text.DmaChnEnable
-                0x9d00f080       0x28
+                0x9d00f7f0       0x28
  .text.DmaChnEnable
-                0x9d00f080       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
-                0x9d00f080                DmaChnEnable
+                0x9d00f7f0       0x28 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_enable_lib.o)
+                0x9d00f7f0                DmaChnEnable
 
 .text.DmaChnClrEvFlags
-                0x9d00f0a8       0x24
+                0x9d00f818       0x24
  .text.DmaChnClrEvFlags
-                0x9d00f0a8       0x24 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
-                0x9d00f0a8                DmaChnClrEvFlags
+                0x9d00f818       0x24 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_clr_ev_flags_lib.o)
+                0x9d00f818                DmaChnClrEvFlags
 
 .text.DmaChnGetEvFlags
-                0x9d00f0cc       0x24
+                0x9d00f83c       0x24
  .text.DmaChnGetEvFlags
-                0x9d00f0cc       0x24 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
-                0x9d00f0cc                DmaChnGetEvFlags
+                0x9d00f83c       0x24 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_chn_get_ev_flags_lib.o)
+                0x9d00f83c                DmaChnGetEvFlags
 
-.text.getcSPI2  0x9d00f0f0       0x20
+.text.getcSPI2  0x9d00f860       0x20
  .text.getcSPI2
-                0x9d00f0f0       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
-                0x9d00f0f0                getcSPI2
+                0x9d00f860       0x20 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(spi_getc_spi2_lib_legacy.o)
+                0x9d00f860                getcSPI2
 
 .text.INTRestoreInterrupts
-                0x9d00f110       0x1c
+                0x9d00f880       0x1c
  .text.INTRestoreInterrupts
-                0x9d00f110       0x1c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
-                0x9d00f110                INTRestoreInterrupts
+                0x9d00f880       0x1c /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_restore_interrupts_lib.o)
+                0x9d00f880                INTRestoreInterrupts
 
-.text           0x9d00f12c       0x18
- .text          0x9d00f12c       0x18 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-nmi-handler.o)
-                0x9d00f12c                _nmi_handler
+.text           0x9d00f89c       0x18
+ .text          0x9d00f89c       0x18 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-nmi-handler.o)
+                0x9d00f89c                _nmi_handler
 
-.rodata         0x9d00f144       0x10
- .rodata        0x9d00f144       0x10 build/pickit3/production/ff.o
+.rodata         0x9d00f8b4       0x10
+ .rodata        0x9d00f8b4       0x10 build/pickit3/production/ff.o
 
 .text.INTDisableInterrupts
-                0x9d00f154        0x8
+                0x9d00f8c4        0x8
  .text.INTDisableInterrupts
-                0x9d00f154        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
-                0x9d00f154                INTDisableInterrupts
+                0x9d00f8c4        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_disable_interrupts_lib.o)
+                0x9d00f8c4                INTDisableInterrupts
 
 .text.INTEnableInterrupts
-                0x9d00f15c        0x8
+                0x9d00f8cc        0x8
  .text.INTEnableInterrupts
-                0x9d00f15c        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
-                0x9d00f15c                INTEnableInterrupts
+                0x9d00f8cc        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(int_enable_interrupts_lib.o)
+                0x9d00f8cc                INTEnableInterrupts
 
 .text._on_reset
-                0x9d00f164        0x8
+                0x9d00f8d4        0x8
  .text._on_reset
-                0x9d00f164        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
-                0x9d00f164                _on_reset
+                0x9d00f8d4        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+                0x9d00f8d4                _on_reset
 
 .text._on_bootstrap
-                0x9d00f16c        0x8
+                0x9d00f8dc        0x8
  .text._on_bootstrap
-                0x9d00f16c        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
-                0x9d00f16c                _on_bootstrap
+                0x9d00f8dc        0x8 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+                0x9d00f8dc                _on_bootstrap
 
-.rodata         0x9d00f174        0x4
- .rodata        0x9d00f174        0x4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
-                0x9d00f174                _DmaMapTbl
+.rodata         0x9d00f8e4        0x4
+ .rodata        0x9d00f8e4        0x4 /opt/microchip/xc32/v1.32/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX270F256B.a(dma_reg_map_tbl_lib.o)
+                0x9d00f8e4                _DmaMapTbl
