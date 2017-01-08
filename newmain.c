@@ -221,6 +221,8 @@ block_t blocks[MAX_BLOCKS+1]={
     },
 };
 
+void musicTask(void) ;
+
 void myg_pset(int x,int y,unsigned int c)
 // (x,y)の位置にカラーcで点を描画
 {
@@ -318,33 +320,38 @@ unsigned long randomxor128(void){
     return( w=(w^(w>>19))^(t^(t>>8)) ); 
 }
 
-void initball(ball_t *ball,int level,int ballnum){
-    int i;
-    for(i=0;i<ballnum;i++){
-        ball[i].max_speed = 500+level*80;
-        ball[i].obj.pos.x = (i*7987645%200+25)*256;
-        ball[i].obj.pos.y = (30)*256;
-        ball[i].obj.size.x = 16*256;
-        ball[i].obj.size.y = 16*256;
-        ball[i].obj.vero.x = 256+(((i+7)*317614)&0xFF);
-        ball[i].obj.vero.y = ball[i].max_speed-ball[i].obj.vero.x;
-        ball[i].exist = 1;
-        ball[i].rate = level+10;
-    }
-    for(;i<MAX_BALLS;i++){
-        ball[i].exist=0;
-    }
-}
+void title(void){
+    g_clearscreen();
+    g_printstr(0,50,7,8,"Multi-Ball Breakout Game");
+    g_printstr(0,70,7,8,"Press Start key to start.");
+    g_printstr(0,150,7,8,"Made By Gombe.");
 
-void initblock(block_t *blocks,int level){
+    
+    image_t img={
+        .size = {
+            .x = 16,
+            .y = 16,
+        }
+    };
     int i;
-    for(i=0;i<MAX_BLOCKS;i++){
-        blocks[i].hp = i / 12+3+level - (randomxor128()%5);
-        if(blocks[i].hp < 0)blocks[i].hp=0;
-        blocks[i].obj.pos.x = ((i%6) * 200 / 6 + 28)*256;
-        blocks[i].obj.pos.y = ((i/6) * 16+30)*256;
-        blocks[i].obj.size.x = (200 / 6-3) *256;
-        blocks[i].obj.size.y = (13) *256;
+    vector_t v={
+        .x = 0,
+        .y = 256*100,
+    };
+    const vector_t vel={
+        .x = 256*30,
+        .y = 0,
+    };
+    
+    
+    for(i=0;i<6;i++){
+        img.bmp = ballimg[i];
+        drawImage(&v,&img);
+        v = add2(&v,&vel);
+    }
+    while(PORTB&KEYSTART) {
+        randomxor128();
+        audiotask();
     }
 }
 
@@ -365,31 +372,64 @@ int geneball(ball_t *ball,int level,vector_t *pos){
     ball[i].rate = level+10;
 //    ball[i].imgcol = 5;
 
-    ball[i].imgcol = (randomxor128()%level)%6;
-    ball[i].max_speed = ball[i].imgcol*100+600;
+    ball[i].imgcol = (randomxor128()%(level+1))%6;
+    ball[i].max_speed = ball[i].imgcol*100+600+level*50;
     switch(ball[i].imgcol){
         case 0:
-            ball[i].obj.acc.y = 1;
+            ball[i].obj.acc.x = 0;
+            ball[i].obj.acc.y = 0;
             break;
         case 1:
-            ball[i].obj.acc.y = 2;
+            ball[i].obj.acc.x = (randomxor128()%2)*2-2;
+            ball[i].obj.acc.y = 0;
             break;
         case 2:
+            ball[i].obj.acc.x = 0;
             ball[i].obj.acc.y = 3;
             break;
         case 3:
+            ball[i].obj.acc.x = 0;
             ball[i].obj.acc.y = 5;
             break;
         case 4:
+            ball[i].obj.acc.x = 0;
             ball[i].obj.acc.y = -1;
             break;
         case 5:
+            ball[i].obj.acc.x = 0;
             ball[i].obj.acc.y = -2;
             break;
             
     }
 
     return 0;
+}
+
+void initball(ball_t *ball,int level,int ballnum){
+    int i;
+    vector_t pos;
+    for(i=0;i<MAX_BALLS;i++){
+        ball[i].exist=0;
+    }
+    for(i=0;i<ballnum;i++){
+        pos.x = (i*7987645%200+25)*256;
+        pos.y = (30)*256;
+        geneball(ball,level,&pos);
+    }
+
+}
+
+void initblock(block_t *blocks,int level){
+    int i;
+    for(i=0;i<MAX_BLOCKS;i++){
+        blocks[i].hp = i / 12+3+level - (randomxor128()%5);
+        if(blocks[i].hp < 0)blocks[i].hp=0;
+        blocks[i].hp&=0xF;
+        blocks[i].obj.pos.x = ((i%6) * 200 / 6 + 28)*256;
+        blocks[i].obj.pos.y = ((i/6) * 16+30)*256;
+        blocks[i].obj.size.x = (200 / 6-3) *256;
+        blocks[i].obj.size.y = (13) *256;
+    }
 }
 
 void printscore(int score){
@@ -502,24 +542,23 @@ int main(void){
             while (1) asm("wait");
         }
     }
+    
 
     init_graphic(VRAMA);
     set_graphmode(1);
 
     image_t img={
-        .bmp = &ballimg,
         .size = {
             .x = 16,
             .y = 16,
         }
     };
     
-    
+
+    title();
 
     int ref=0,ret,i;
     g_clearscreen();
-    /*最初の方は精度が出なさそう。。*/    
-    for(i=0;i<100;i++)randomxor128();
  
     int paddlewidth = 120*256;
     while(1){
@@ -554,9 +593,10 @@ int main(void){
             int e=0;
             for(i=0;i<MAX_BALLS;i++)if(balls[i].exist)e=1;
             if(!e){
-                g_printstr(10,120,7,8,"game over");
+                g_printstr(10,120,7,8,"Game Over");
+                g_printstr(0,130,7,8,"Press Start key to restart.");
                 score = 0;
-                stage = 0;
+                stage = 1;
                 ballnum=3;
                 paddlewidth = 120*256;
                 while(PORTB&KEYSTART)musicTask();
@@ -567,10 +607,11 @@ int main(void){
             if(!e){
                 stage++;
                 ballnum += stage/2+1;
-                g_printstr(10,120,7,8,"game clear");
-                g_printstr(10,130,7,8,"you get");
+                g_printstr(10,120,7,8,"Game Clear");
+                g_printstr(10,130,7,8,"You Get");
                 g_printnum(80,130,7,8,ballnum);
-                g_printstr(100,130,7,8,"x1000");
+                g_printstr(100,130,7,8,"x1000 Points!");
+                g_printstr(0,140,7,8,"Goto Next Stage! Press Start key.");
                 score += ballnum*1000;
                 paddlewidth -= paddlewidth>>8;
                 printscore(score);

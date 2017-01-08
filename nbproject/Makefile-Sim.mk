@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 # Object Directory
@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=newmain.c audio.c colortext32.c tetrisfont.c
+SOURCEFILES_QUOTED_IF_SPACED=newmain.c ff.c mmc_xmega.c composite32-high4.c mylib.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.o ${OBJECTDIR}/audio.o ${OBJECTDIR}/colortext32.o ${OBJECTDIR}/tetrisfont.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/audio.o.d ${OBJECTDIR}/colortext32.o.d ${OBJECTDIR}/tetrisfont.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.o ${OBJECTDIR}/ff.o ${OBJECTDIR}/mmc_xmega.o ${OBJECTDIR}/composite32-high4.o ${OBJECTDIR}/mylib.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/ff.o.d ${OBJECTDIR}/mmc_xmega.o.d ${OBJECTDIR}/composite32-high4.o.d ${OBJECTDIR}/mylib.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/newmain.o ${OBJECTDIR}/audio.o ${OBJECTDIR}/colortext32.o ${OBJECTDIR}/tetrisfont.o
+OBJECTFILES=${OBJECTDIR}/newmain.o ${OBJECTDIR}/ff.o ${OBJECTDIR}/mmc_xmega.o ${OBJECTDIR}/composite32-high4.o ${OBJECTDIR}/mylib.o
 
 # Source Files
-SOURCEFILES=newmain.c audio.c colortext32.c tetrisfont.c
+SOURCEFILES=newmain.c ff.c mmc_xmega.c composite32-high4.c mylib.c
 
 
 CFLAGS=
@@ -75,10 +75,10 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-Sim.mk dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-Sim.mk dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=32MX250F128B
-MP_LINKER_FILE_OPTION=
+MP_LINKER_FILE_OPTION=,--script="App_32MX170F256B.ld"
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -100,23 +100,29 @@ ${OBJECTDIR}/newmain.o: newmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/newmain.o 
 	@${FIXDEPS} "${OBJECTDIR}/newmain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/newmain.o.d" -o ${OBJECTDIR}/newmain.o newmain.c      -DSIMMODE
 	
-${OBJECTDIR}/audio.o: audio.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/ff.o: ff.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/audio.o.d 
-	@${RM} ${OBJECTDIR}/audio.o 
-	@${FIXDEPS} "${OBJECTDIR}/audio.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/audio.o.d" -o ${OBJECTDIR}/audio.o audio.c      -DSIMMODE
+	@${RM} ${OBJECTDIR}/ff.o.d 
+	@${RM} ${OBJECTDIR}/ff.o 
+	@${FIXDEPS} "${OBJECTDIR}/ff.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/ff.o.d" -o ${OBJECTDIR}/ff.o ff.c      -DSIMMODE
 	
-${OBJECTDIR}/colortext32.o: colortext32.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/mmc_xmega.o: mmc_xmega.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/colortext32.o.d 
-	@${RM} ${OBJECTDIR}/colortext32.o 
-	@${FIXDEPS} "${OBJECTDIR}/colortext32.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/colortext32.o.d" -o ${OBJECTDIR}/colortext32.o colortext32.c      -DSIMMODE
+	@${RM} ${OBJECTDIR}/mmc_xmega.o.d 
+	@${RM} ${OBJECTDIR}/mmc_xmega.o 
+	@${FIXDEPS} "${OBJECTDIR}/mmc_xmega.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/mmc_xmega.o.d" -o ${OBJECTDIR}/mmc_xmega.o mmc_xmega.c      -DSIMMODE
 	
-${OBJECTDIR}/tetrisfont.o: tetrisfont.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/composite32-high4.o: composite32-high4.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/tetrisfont.o.d 
-	@${RM} ${OBJECTDIR}/tetrisfont.o 
-	@${FIXDEPS} "${OBJECTDIR}/tetrisfont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/tetrisfont.o.d" -o ${OBJECTDIR}/tetrisfont.o tetrisfont.c      -DSIMMODE
+	@${RM} ${OBJECTDIR}/composite32-high4.o.d 
+	@${RM} ${OBJECTDIR}/composite32-high4.o 
+	@${FIXDEPS} "${OBJECTDIR}/composite32-high4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/composite32-high4.o.d" -o ${OBJECTDIR}/composite32-high4.o composite32-high4.c      -DSIMMODE
+	
+${OBJECTDIR}/mylib.o: mylib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mylib.o.d 
+	@${RM} ${OBJECTDIR}/mylib.o 
+	@${FIXDEPS} "${OBJECTDIR}/mylib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/mylib.o.d" -o ${OBJECTDIR}/mylib.o mylib.c      -DSIMMODE
 	
 else
 ${OBJECTDIR}/newmain.o: newmain.c  nbproject/Makefile-${CND_CONF}.mk
@@ -125,23 +131,29 @@ ${OBJECTDIR}/newmain.o: newmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/newmain.o 
 	@${FIXDEPS} "${OBJECTDIR}/newmain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/newmain.o.d" -o ${OBJECTDIR}/newmain.o newmain.c      -DSIMMODE
 	
-${OBJECTDIR}/audio.o: audio.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/ff.o: ff.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/audio.o.d 
-	@${RM} ${OBJECTDIR}/audio.o 
-	@${FIXDEPS} "${OBJECTDIR}/audio.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/audio.o.d" -o ${OBJECTDIR}/audio.o audio.c      -DSIMMODE
+	@${RM} ${OBJECTDIR}/ff.o.d 
+	@${RM} ${OBJECTDIR}/ff.o 
+	@${FIXDEPS} "${OBJECTDIR}/ff.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/ff.o.d" -o ${OBJECTDIR}/ff.o ff.c      -DSIMMODE
 	
-${OBJECTDIR}/colortext32.o: colortext32.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/mmc_xmega.o: mmc_xmega.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/colortext32.o.d 
-	@${RM} ${OBJECTDIR}/colortext32.o 
-	@${FIXDEPS} "${OBJECTDIR}/colortext32.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/colortext32.o.d" -o ${OBJECTDIR}/colortext32.o colortext32.c      -DSIMMODE
+	@${RM} ${OBJECTDIR}/mmc_xmega.o.d 
+	@${RM} ${OBJECTDIR}/mmc_xmega.o 
+	@${FIXDEPS} "${OBJECTDIR}/mmc_xmega.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/mmc_xmega.o.d" -o ${OBJECTDIR}/mmc_xmega.o mmc_xmega.c      -DSIMMODE
 	
-${OBJECTDIR}/tetrisfont.o: tetrisfont.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/composite32-high4.o: composite32-high4.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/tetrisfont.o.d 
-	@${RM} ${OBJECTDIR}/tetrisfont.o 
-	@${FIXDEPS} "${OBJECTDIR}/tetrisfont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/tetrisfont.o.d" -o ${OBJECTDIR}/tetrisfont.o tetrisfont.c      -DSIMMODE
+	@${RM} ${OBJECTDIR}/composite32-high4.o.d 
+	@${RM} ${OBJECTDIR}/composite32-high4.o 
+	@${FIXDEPS} "${OBJECTDIR}/composite32-high4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/composite32-high4.o.d" -o ${OBJECTDIR}/composite32-high4.o composite32-high4.c      -DSIMMODE
+	
+${OBJECTDIR}/mylib.o: mylib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mylib.o.d 
+	@${RM} ${OBJECTDIR}/mylib.o 
+	@${FIXDEPS} "${OBJECTDIR}/mylib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -O1 -MMD -MF "${OBJECTDIR}/mylib.o.d" -o ${OBJECTDIR}/mylib.o mylib.c      -DSIMMODE
 	
 endif
 
@@ -154,15 +166,15 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk  libsdfsio.a  
+dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    App_32MX170F256B.ld
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_SIMULATOR=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    libsdfsio.a            -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_SIMULATOR=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}                -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"
 	
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk  libsdfsio.a 
+dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   App_32MX170F256B.ld
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    libsdfsio.a        -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"
-	${MP_CC_DIR}/xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/TVtest.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}            -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"
+	${MP_CC_DIR}/xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/Videotest.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
 
