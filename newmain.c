@@ -46,7 +46,6 @@ void audiotask(void);
 
 unsigned char sounddata[SIZEOFSOUNDBF] = {0};
 
-FIL fhandle;
 FATFS fatfs;
 
 #define PADDLE_Y ((224-20)*256)
@@ -76,6 +75,19 @@ typedef struct{
     object_t obj;
 } block_t;
 
+const uint8_t s_break[]={
+#include "break.h"
+    0
+};
+
+const uint8_t s_hitblk[]={
+#include "hitblk.h"
+    0
+};
+const uint8_t s_hitpad[]={
+#include "hitpad.h"
+    0
+};
 #define MAX_BLOCKS 30
 #define MAX_BALLS 15
 
@@ -202,12 +214,12 @@ unsigned long randomxor128(void){
     unsigned long t; 
     t=(x^(x<<11));x=y;y=z;z=w; 
     return( w=(w^(w>>19))^(t^(t>>8)) ); 
-} 
+}
 
 void initball(ball_t *ball,int level,int ballnum){
     int i;
     for(i=0;i<ballnum;i++){
-        ball[i].max_speed = 500+level*100;
+        ball[i].max_speed = 500+level*80;
         ball[i].obj.pos.x = (i*7987645%200+25)*256;
         ball[i].obj.pos.y = (30)*256;
         ball[i].obj.size.x = 16*256;
@@ -259,10 +271,47 @@ void printscore(int score){
     g_printnum(100,1,7,8,score);
 }
 
+//you must set stop data!
+#define SOUNDCH 5
+
+FIL fbgm;
+int sound_kind;
+const uint8_t stop = 0;
+const uint8_t *cur_sound[SOUNDCH] = {
+    &stop,&stop, &stop,&stop, &stop,
+};
+
+void sound(const uint8_t *sound){
+    int i;
+    for(i=0;i<SOUNDCH;i++){
+        if(*(cur_sound[i])==0)break;
+    }
+    if(i==SOUNDCH)
+        return;
+    cur_sound[i] = sound;
+}
+
+/*mix type : add*/
+void soundmixing(uint8_t *buff){
+    int j;
+    uint8_t *tbuf = buff;
+    for(j=0;j<SOUNDCH;j++){
+        buff = tbuf;
+        if(*(cur_sound[j])==0)continue;
+        int i;
+        i = SIZEOFSOUNDBF/2;
+        do{
+            *buff++ += (*(cur_sound[j]++)-128)>>1;
+        }while(--i&&*(cur_sound[j]));
+        ;
+    }
+}
+
 int main(void){
     int score = 0;
     int stage = 1;
     int ballnum = 3;
+    FRESULT res;
 
     OSCConfig(OSC_POSC_PLL, OSC_PLL_MULT_15, OSC_PLL_POST_1, 0);
 
@@ -303,8 +352,31 @@ int main(void){
     DmaChnSetTxfer(0, sounddata, (void*) &OC4RS, sizeof (sounddata), 1, 1);
 
     DmaChnEnable(0);
-
     init_composite(); // ビデオ出力システムの初期化
+
+#define FILENAME "bgm.raw"    
+    printstr("SD INIT...");
+    if (disk_initialize(0) != 0) {
+        printstr("SD INIT ERR");
+        while (1) asm("wait");
+    }
+    if (res = f_mount(&fatfs, "", 0) != FR_OK) {
+        printstr("SD INIT ERR");
+        while (1) asm("wait");
+    } else {
+#define PATH "./blk_data"
+        res = f_chdir(PATH);
+        if(res == FR_NO_PATH){
+            printstr("DIR <"PATH"> NOT FOUND");
+            while (1) asm("wait");            
+        }
+        res = f_open(&fbgm, FILENAME, FA_READ);
+        if (res != FR_OK) {
+            printstr("FILE <"FILENAME"> NOT FOUND");
+            while (1) asm("wait");
+        }
+    }
+
     init_graphic(VRAMA);
     set_graphmode(1);
 
@@ -319,6 +391,8 @@ int main(void){
     
 
     int ref=0,ret,i;
+    g_clearscreen();
+    /*最初の方は精度が出なさそう。。*/    
     for(i=0;i<100;i++)randomxor128();
  
     int paddlewidth = 120*256;
@@ -340,9 +414,15 @@ int main(void){
         printscore(score);
         if(!(PORTB & KEYRIGHT)){
             paddlepos += 1000;
+            if(paddlepos > 224*256){
+                paddlepos = -paddlewidth;
+            }
         }
         if(!(PORTB & KEYLEFT)){
             paddlepos -= 1000;
+            if(paddlepos < -paddlewidth){
+                paddlepos = 224*256;
+            }
         }
         {
             int e=0;
@@ -353,7 +433,7 @@ int main(void){
                 stage = 0;
                 ballnum=3;
                 paddlewidth = 120*256;
-                while(PORTB&KEYSTART);
+                while(PORTB&KEYSTART)musicTask();
                 break;
             }
             e=0;
@@ -366,10 +446,10 @@ int main(void){
                 g_printnum(80,130,7,8,ballnum);
                 g_printstr(100,130,7,8,"x1000");
                 score += ballnum*1000;
-                paddlewidth -= 10*256;
+                paddlewidth -= paddlewidth>>8;
                 printscore(score);
                 if(ballnum > MAX_BALLS)ballnum = MAX_BALLS;
-                while(PORTB&KEYSTART);
+                while(PORTB&KEYSTART)musicTask();
                 break;
             }
         }
@@ -388,12 +468,14 @@ int main(void){
                         ref |= ret;
                         blocks[i].hp--;
                         if(blocks[i].hp==0){
+                            sound(s_break);
                             eraseBlock(&blocks[i]);
                             if(randomxor128()%10==0){
                                 geneball(balls,stage,&blocks[i].obj.pos);
                                 ballnum++;
                             }
                         }else{
+                            sound(s_hitblk);
                             drawBlock(&blocks[i]);
                         }
                     }
@@ -408,8 +490,9 @@ int main(void){
                 balls[b].obj.vero.y = -balls[b].obj.vero.y;            
             }
             if(ref) update_object(&balls[b].obj);
-            if(balls[b].obj.pos.y+balls[b].obj.size.y > PADDLE_Y && balls[b].obj.pos.y+balls[b].obj.size.y < PADDLE_Y + 3*256){
+            if(balls[b].obj.pos.y+balls[b].obj.size.y > PADDLE_Y){
                 if(balls[b].obj.pos.x > paddlepos&&balls[b].obj.pos.x < paddlepos + paddlewidth){
+                    sound(s_hitpad);
                     balls[b].obj.vero.x -= (paddlepos + paddlewidth / 2 - balls[b].obj.pos.x)/(paddlewidth/512);
                     if(balls[b].obj.vero.x > balls[b].max_speed - 200){
                         balls[b].obj.vero.x = balls[b].max_speed - 200;
@@ -432,9 +515,12 @@ int main(void){
         myg_boxfill(0,PADDLE_Y>>8 ,255,((PADDLE_Y)>>8) + 5,8);
         g_boxfill((paddlepos>>8 )+10,PADDLE_Y>>8 ,((paddlepos + paddlewidth)>>8)-10,((PADDLE_Y)>>8) + 5,7);
         while(!drawing);
-        while(drawing);
+        while(drawing){
+            musicTask();
+        }
         for(b=0;b<MAX_BALLS;b++){
-            eraseImage(&(balls[b].obj.pos),&img);
+            if(balls[b].exist)
+                eraseImage(&(balls[b].obj.pos),&img);
         }
     }
     }
@@ -587,6 +673,10 @@ void audiotask(void) {
             buff[i] = 128;
         }
 
-        f_read(&fhandle, buff, SIZEOFSOUNDBF / 2, &read);
+        f_read(&fbgm, buff, SIZEOFSOUNDBF / 2, &read);
+        if(read==0){
+            f_open(&fbgm,FILENAME,FA_READ);
+        }
+        soundmixing(buff);
     }
 }

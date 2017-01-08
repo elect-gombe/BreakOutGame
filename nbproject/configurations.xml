@@ -12,6 +12,9 @@
       <itemPath>mmc_xmega.h</itemPath>
       <itemPath>videoout.h</itemPath>
       <itemPath>mylib.h</itemPath>
+      <itemPath>break.h</itemPath>
+      <itemPath>hitblk.h</itemPath>
+      <itemPath>hitpad.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -196,6 +199,7 @@
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
         <property key="USB" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

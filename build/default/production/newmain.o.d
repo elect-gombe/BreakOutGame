@@ -4,4 +4,7 @@ videoout.h  \
 ff.h  \
 integer.h  \
  ffconf.h  \
-mylib.h 
+mylib.h  \
+break.h  \
+hitblk.h  \
+hitpad.h 
